@@ -1,1 +1,29 @@
+spring:
+  profiles:
+    active: "local"
+  application:
+    name: ikk-backend
+---
+
 #Midtrans Konfigurasi
+midtrans:
+  clientKey: SB-Mid-client-2OtRPXJGDz-eL4Zd
+  serverKey: SB-Mid-server-g8bCZvQMyL7tvZgzm74woZ0Q
+
+---
+
+#Konfigurasi Connection
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/nama_database
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+---
